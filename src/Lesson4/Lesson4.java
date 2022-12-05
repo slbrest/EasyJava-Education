@@ -35,7 +35,7 @@ public class Lesson4 {
 
     public static int playerClaas;
     public static String claas;
-    public static int lvlChar = 6;
+    public static int lvlChar = 5;
 
     public static void main(String[] args) {
 
@@ -46,44 +46,26 @@ public class Lesson4 {
         playerClaas = scr.nextInt();
         scr.close();
 
-        switch (playerClaas){
-            case 1:
-                claas = "воина.";
-                break;
-            case 2:
-                claas = "мага.";
-                break;
-            case 3:
-                claas = "лучника.";
-                break;
-            case 4:
-                claas = "убийцу.";
-                break;
-            case 5:
-                claas = "чернокнижника.";
-                break;
-            case 6:
-                claas = "шамана.";
-                break;
-            case 7:
-                claas = "паладина.";
-                break;
-            case 8:
-                claas = "скаута.";
-                break;
-            case 9:
-                claas = "лекаря.";
-                break;
-            case 10:
-                claas = "барда.";
-                break;
-            default:
-                claas = "Нет такого персонажа";
-                break;
+        switch (playerClaas) {
+            case 1 -> claas = "воина.";
+            case 2 -> claas = "мага.";
+            case 3 -> claas = "лучника.";
+            case 4 -> claas = "убийцу.";
+            case 5 -> claas = "чернокнижника.";
+            case 6 -> claas = "шамана.";
+            case 7 -> claas = "паладина.";
+            case 8 -> claas = "скаута.";
+            case 9 -> claas = "лекаря.";
+            case 10 -> claas = "барда.";
+            default -> claas = "Нет такого персонажа";
         }
 
         youChose(claas);
+        bonus();
 
+    }
+
+    public static void bonus(){
         if(lvlChar % 5 == 0) System.out.println("Вы получили бонус");
     }
 
