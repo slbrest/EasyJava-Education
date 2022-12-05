@@ -36,6 +36,8 @@ public class Lesson4 {
     public static int playerClaas;
     public static String claas;
     public static int lvlChar = 5;
+    public static int onePlayer = 10;
+    public static int twoPlayer = 15;
 
     public static void main(String[] args) {
 
@@ -62,6 +64,7 @@ public class Lesson4 {
 
         youChose(claas);
         bonus();
+        openDangerous();
 
     }
 
@@ -74,6 +77,15 @@ public class Lesson4 {
     }
 
     public static void openDangerous(){
-
+        if((onePlayer >= 10 && twoPlayer >= 10) && ((onePlayer - twoPlayer) <= 3 || (twoPlayer - onePlayer) <= 3)) System.out.println("Open door");
+        else System.out.println("Персонажы не соответствуют требованиям.");
     }
 }
+//3. Написать метод, который должен открыть подземелье для группы из
+//двух игроков. Условия открытия подземелья:
+//3.1. Минимальный уровень персонажа 10, если хотя бы один из
+//участников меньше, то не откроется
+//3.2. Разница между максимальным и минимальным уровнем в группе
+//должна быть не больше 3-х.
+//3.3. Для упрощения условия, уровни персонажей не могут быть равны
+//между собой

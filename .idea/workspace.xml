@@ -41,7 +41,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Switch">
+  <component name="RunManager" selected="Application.Lesson4">
     <configuration name="Lesson3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Lesson3.Lesson3" />
       <module name="EasyJava-Education" />
@@ -90,8 +90,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Switch" />
         <item itemvalue="Application.Lesson4" />
+        <item itemvalue="Application.Switch" />
         <item itemvalue="Application.Lesson3" />
         <item itemvalue="Application.Main" />
       </list>
@@ -162,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670185876047</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="lesson 4">
+      <created>1670268629226</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670268629226</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
