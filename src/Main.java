@@ -14,11 +14,39 @@
 единице опыта постоянно, пока значение опыта не достигнет 300.
 При этом, даже если значение опыта персонажа больше 300, он
 должен получить хотя бы одну единицу из фонтана.*/
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+        int[] arr = {1976, 1989, 1965, 1990, 1988, 1995, 1993};
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] % 2 !=0) System.out.print("");
+            else arr[i] = 0;
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println();
 
+        int[] arr2 = {12, 200, 14, 76, 197, 3, 201};
+        int max = arr2[0];
+        int min = arr2[0];
+        for (int j : arr2) {
+            if (j > max) max = j;
+            if (j < min) min = j;
+        }
+        System.out.println("Максимально число в массиве " + max);
+        System.out.println("Минимальное число в массиве " + min);
+        System.out.println();
+
+        int[][] arr3 = new int[5][5];
+        int x = 1;
+        for (int[] ints : arr3) {
+            System.out.print(x + " ");
+            for (int j = 0; j < ints.length - 1; j++) {
+                x++;
+                System.out.print(x + " ");
+            }
+            x++;
+            System.out.println();
+        }
     }
-
 }
