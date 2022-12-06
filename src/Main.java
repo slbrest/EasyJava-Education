@@ -48,5 +48,14 @@ public class Main {
             x++;
             System.out.println();
         }
+
+        System.out.println();
+
+        int expChar = 298;
+        do {
+            ++expChar;
+            System.out.println(expChar);
+        } while (expChar <= 300);
+
     }
 }
