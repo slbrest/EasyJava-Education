@@ -6,6 +6,7 @@ public class Lesson6 {
     public static void main(String[] args) {
         int[] array = {8, 215, 12, 17, 13, 200};
         sortBarrels(array);
+        System.out.println("I'm believe!!");
     }
 
     public static void sortBarrels(int[] array){
