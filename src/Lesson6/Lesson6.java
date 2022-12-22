@@ -5,8 +5,9 @@ import java.util.Arrays;
 public class Lesson6 {
     public static void main(String[] args) {
         int[] array = {8, 215, 12, 17, 13, 200};
+        int[][] matrix = new int [5][5];
         sortBarrels(array);
-        System.out.println("I'm believe!!");
+        fillDias(matrix);
     }
 
     public static void sortBarrels(int[] array){
@@ -22,5 +23,15 @@ public class Lesson6 {
             }
         }
         System.out.println(Arrays.toString(wineArray));
+    }
+
+    public static void fillDias(int[][] array){
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if(i == j) array[i][j] = 1;
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
