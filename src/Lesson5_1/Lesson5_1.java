@@ -4,28 +4,18 @@ public class Lesson5_1 {
     public static void main(String[] args) {
         String toCheck = "А роза упала на лапу Азора";
         String toCheck2 = "Madam I'm Adam";
-        System.out.println(isStringPalindrome(toCheck));
-        System.out.println(isStringPalindrome(toCheck2));
+
+        System.out.println(isPalindrome(toCheck));
+        System.out.println(isPalindrome(toCheck2));
     }
 
-    public static String removeJunk (String check){
-        int i, len = check.length();
-        char c;
-        StringBuilder stringBuilder = new StringBuilder();
-        for (i = len - 1; i >=  0 ; i--) {
-            c = check.charAt(i);
-            if (Character.isLetterOrDigit(c)){
-                stringBuilder.append(c);
-            }
-        }
-        return stringBuilder.toString().toLowerCase();
-    }
+    public static boolean isPalindrome(String text) {
+        text = text.replaceAll("\\W","");//удаляем все ненужное
+        StringBuilder strBuilder = new StringBuilder(text);
+        strBuilder.reverse(); //переворачиваем строку
+        String invertedText = strBuilder.toString();//присваиваем перевернутую строку
 
-    public static boolean isStringPalindrome(String stringToCheck){
-        String clean = removeJunk(stringToCheck);
-        for (int i = 0; i < clean.length() / 2; i++) {
-            if(clean.charAt(i) != clean.charAt(clean.length() - i - 1)) return false;
-        }
-        return true;
+        return text.equalsIgnoreCase(invertedText) ;//возвращаем сравнение двух строк вне зависимости от регистра
+
     }
 }
