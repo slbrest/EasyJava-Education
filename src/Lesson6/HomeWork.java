@@ -34,8 +34,10 @@ public class HomeWork {
 
         System.out.println(isPalindrome(toCheck));
         System.out.println(isPalindrome(toCheck2));
+        int[][] matrix = new int [5][5];
 
         placeRocks();
+        fillDiags(matrix);
     }
 
     public static boolean isPalindrome(String text) {
@@ -87,6 +89,23 @@ public class HomeWork {
                 }
             }
             System.out.println(count);
+        }
+    }
+
+    public static void fillDiags(int[][] array){
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if(i == j) {
+                    array[i][j] = 0;
+                }
+                if(j<i && i+j < array.length - 1) array[i][j] = 1;
+                if(i< array.length/2 && j>i && i+j < array.length - 1) array[i][j] = 2; //верхний треугольник
+                if(i> array.length/2 && j<i && i+j > array.length - 1) array[i][j] = 3; //нижний треугольник
+                if(j>i && i+j > array.length - 1) array[i][j] = 4; //правый треугольник
+                if(i + j == array.length - 1) array[i][j] = 0;
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 
