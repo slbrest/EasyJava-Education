@@ -1,12 +1,15 @@
 package Lesson8;
 
+import java.util.Scanner;
+
 public class Lesson8 {
     public static void main(String[] args) {
-        double[] revenue = {88750, 125430, 99700, 14500, 158000, 65000, 99000, 189000, 210000, 42000, 165800, 258900};
-        double sum = 0;
-        for(double x: revenue){
-            sum += x;
+        int[] passwords = {2021, 1023, 9929};
+        Scanner scanner = new Scanner(System.in);
+        int  password = scanner.nextInt();
+        for (int x = 0; true;) {
+            if (passwords[x] == password)
+            System.out.println("Welcome");
         }
-        System.out.println(sum / revenue.length);
     }
 }
