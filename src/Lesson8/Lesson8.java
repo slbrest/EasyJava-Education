@@ -1,41 +1,52 @@
 package Lesson8;
 
-import java.util.Scanner;
-
 /*
-В публичный статический метод init(char[]) передается массив символов размером 9, который нужно заполнить следующими символами:
-0 - '\u00A9'
-1 - '\u004A'
-2 - '\u0061'
-3 - '\u0076'
-4 - '\u0061'
-5 - '\u0052'
-6 - '\u0075'
-7 - '\u0073'
-8 - '\u0068'
+В этой задаче тебе нужно выполнить проверку URL-адреса.
 
-Чтобы посмотреть результат, запусти метод main().
+Простая схема URL-адреса выглядит так:
+<сетевой протокол>://<название ресурса>.<домен>
+
+Метод checkProtocol(String) проверяет, какой сетевой протокол (http или https) у URL-адреса, полученного входящим параметром,
+и возвращает результат проверки — строку название сетевого протокола.
+А метод checkDomain(String) проверяет, какой домен (com, net, org или ru)
+у URL-адреса, полученного входящим параметром, и возвращает результат проверки — строку название домена.
+
+Если URL-адрес начинается не с http или https, то результат будет — "неизвестный".
+Если URL-адрес заканчивается не на com, net, org или ru, то результат будет — "неизвестный".
+
+main не принимает участие в тестировании.
 
 Требования:
-•	Нужно, чтобы метод init(char[]) заполнял полученный массив символов согласно условию.
+•	Нужно, чтобы метод checkProtocol(String) был реализован согласно условию.
+•	Нужно, чтобы метод checkDomain(String) был реализован согласно условию.
 */
 
 public class Lesson8 {
     public static void main(String[] args) {
-        char[] symbols = new char[9];
-        init(symbols);
-        System.out.println(new String(symbols));
+        String[] urls = {"https://javarush.ru", "https://google.com", "http://wikipedia.org", "facebook.com", "https://instagram", "codegym.cc"};
+        for (String url : urls) {
+            String protocol = checkProtocol(url);
+            String domain = checkDomain(url);
+
+            System.out.println("У URL-адреса - " + url + ", сетевой протокол - " + protocol + ", домен - " + domain);
+        }
     }
 
-    public static void init(char[] symbols) {
-        symbols[0] = '\u00A9';
-        symbols[1] = '\u004A';
-        symbols[2] = '\u0061';
-        symbols[3] = '\u0076';
-        symbols[4] = '\u0061';
-        symbols[5] = '\u0052';
-        symbols[6] = '\u0075';
-        symbols[7] = '\u0073';
-        symbols[8] = '\u0068';//напишите тут ваш код
+    public static String checkProtocol(String url) {
+        String result;
+        if(url.startsWith("https:")) result = "https";
+        else if (url.startsWith("http:")) result = "http";//напишите тут ваш код
+        else result = "неизвестный";
+        return result;
+    }
+
+    public static String checkDomain(String url) {
+        String result;
+        if(url.endsWith(".com")) result = "com";
+        else if (url.endsWith(".net")) result = "net";//напишите тут ваш код
+        else if (url.endsWith(".org")) result = "org";//напишите тут ваш код
+        else if (url.endsWith(".ru")) result = "ru";//напишите тут ваш код
+        else result = "неизвестный";
+        return result;
     }
 }
