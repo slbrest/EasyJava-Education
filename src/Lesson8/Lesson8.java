@@ -2,22 +2,37 @@ package Lesson8;
 
 import java.util.Scanner;
 
+/*Проинициализируй статические переменные следующими значениями:
+
+partyFace — "\uD83E\uDD73"
+balloon — "\uD83C\uDF88"
+gift — "\uD83C\uDF81"
+partyPopper — "\uD83C\uDF89"
+cake — "\uD83C\uDF82"
+Чтобы посмотреть поздравление, запусти метод main().
+
+Требования:
+•	Нужно, чтобы переменная partyFace при объявлении была проинициализирована значением "\uD83E\uDD73".
+•	Нужно, чтобы переменная balloon при объявлении была проинициализирована значением "\uD83C\uDF88".
+•	Нужно, чтобы переменная gift при объявлении была проинициализирована значением "\uD83C\uDF81".
+•	Нужно, чтобы переменная partyPopper при объявлении была проинициализирована значением "\uD83C\uDF89".
+•	Нужно, чтобы переменная cake при объявлении была проинициализирована значением "\uD83C\uDF82".
+*/
+
 public class Lesson8 {
-    static String isPrime(int number)
-    {
-        String result = "Is prime";
-            if((number / 2) >= 2){
-                if (number % number == 0) {
-                 result = "Isn't prime";
-        }
-    }
-        return result;//return the result
-    }
+    public static String partyFace = "\uD83E\uDD73";
+    public static String balloon = "\uD83C\uDF88";
+    public static String gift = "\uD83C\uDF81";
+    public static String partyPopper = "\uD83C\uDF89";
+    public static String cake = "\uD83C\uDF82";
 
     public static void main(String[] args) {
-        Scanner read = new Scanner(System.in);
-        int number = read.nextInt();
-        String output = isPrime(number);
-        System.out.println(output);
+        printCongratulation();
+    }
+
+    public static void printCongratulation() {
+        String happyBirthday = "С днем рождения!";
+        String congratulation = partyFace + balloon + partyPopper + cake + gift;
+        System.out.println(happyBirthday + congratulation);
     }
 }
