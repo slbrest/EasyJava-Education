@@ -2,26 +2,40 @@ package Lesson8;
 
 import java.util.Scanner;
 
-/*Выведи на экран следующий текст в две строки:
-It's a Windows path: "C:\Program Files\Java\jdk-13.0.0\bin"
-It's a Java string: \"C:\\Program Files\\Java\\jdk-13.0.0\\bin\"
+/*
+В публичный статический метод init(char[]) передается массив символов размером 9, который нужно заполнить следующими символами:
+0 - '\u00A9'
+1 - '\u004A'
+2 - '\u0061'
+3 - '\u0076'
+4 - '\u0061'
+5 - '\u0052'
+6 - '\u0075'
+7 - '\u0073'
+8 - '\u0068'
 
-Подсказка:
-\” – экранирование двойной кавычки;
-\\ – экранирование обратной косой черты (\).
-
-Больше про экранирование символов и Escape-последовательности в Java читай в статье "Экранирование символов в Java".
+Чтобы посмотреть результат, запусти метод main().
 
 Требования:
-•	Нужно, чтобы программа выводила текст.
-•	Нужно, чтобы было выведено две строки.
-•	Текст первой строки должен быть: It's a Windows path: "C:\Program Files\Java\jdk-13.0.0\bin"
-•	Текст второй строки должен быть: It's a Java string: \"C:\\Program Files\\Java\\jdk-13.0.0\\bin\"
+•	Нужно, чтобы метод init(char[]) заполнял полученный массив символов согласно условию.
 */
 
 public class Lesson8 {
     public static void main(String[] args) {
-        System.out.println("It's a Windows path: \"C:\\Program Files\\Java\\jdk-13.0.0\\bin\"");
-        System.out.println("It's a Java string: \\\"C:\\\\Program Files\\\\Java\\\\jdk-13.0.0\\\\bin\\\"");
+        char[] symbols = new char[9];
+        init(symbols);
+        System.out.println(new String(symbols));
+    }
+
+    public static void init(char[] symbols) {
+        symbols[0] = '\u00A9';
+        symbols[1] = '\u004A';
+        symbols[2] = '\u0061';
+        symbols[3] = '\u0076';
+        symbols[4] = '\u0061';
+        symbols[5] = '\u0052';
+        symbols[6] = '\u0075';
+        symbols[7] = '\u0073';
+        symbols[8] = '\u0068';//напишите тут ваш код
     }
 }
