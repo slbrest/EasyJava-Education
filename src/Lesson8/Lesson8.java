@@ -1,52 +1,32 @@
 package Lesson8;
 
 /*
-В этой задаче тебе нужно выполнить проверку URL-адреса.
+Реализуй метод changePath(String, String) так, чтобы он заменял версию jdk в пути, полученном первым параметром метода,
+на версию, полученную вторым параметром, и возвращал новый путь.
+Версия jdk начинается со строки "jdk" и заканчивается на "/".
 
-Простая схема URL-адреса выглядит так:
-<сетевой протокол>://<название ресурса>.<домен>
+Пример:
+путь — "/usr/java/jdk1.8/bin/"
+версия jdk — "jdk-13"
 
-Метод checkProtocol(String) проверяет, какой сетевой протокол (http или https) у URL-адреса, полученного входящим параметром,
-и возвращает результат проверки — строку название сетевого протокола.
-А метод checkDomain(String) проверяет, какой домен (com, net, org или ru)
-у URL-адреса, полученного входящим параметром, и возвращает результат проверки — строку название домена.
-
-Если URL-адрес начинается не с http или https, то результат будет — "неизвестный".
-Если URL-адрес заканчивается не на com, net, org или ru, то результат будет — "неизвестный".
-
-main не принимает участие в тестировании.
+Метод changePath(путь, версия jdk) должен вернуть путь — "/usr/java/jdk-13/bin/".
+Метод main() не принимает участия в тестировании.
 
 Требования:
-•	Нужно, чтобы метод checkProtocol(String) был реализован согласно условию.
-•	Нужно, чтобы метод checkDomain(String) был реализован согласно условию.
+•	Нужно, чтобы метод changePath(String, String) был реализован согласно условию.
 */
 
 public class Lesson8 {
+
     public static void main(String[] args) {
-        String[] urls = {"https://javarush.ru", "https://google.com", "http://wikipedia.org", "facebook.com", "https://instagram", "codegym.cc"};
-        for (String url : urls) {
-            String protocol = checkProtocol(url);
-            String domain = checkDomain(url);
+        String path = "/usr/java/jdk1.8/bin/";
 
-            System.out.println("У URL-адреса - " + url + ", сетевой протокол - " + protocol + ", домен - " + domain);
-        }
+        String jdk13 = "jdk-13";
+        System.out.println(changePath(path, jdk13));
     }
 
-    public static String checkProtocol(String url) {
-        String result;
-        if(url.startsWith("https:")) result = "https";
-        else if (url.startsWith("http:")) result = "http";//напишите тут ваш код
-        else result = "неизвестный";
-        return result;
-    }
-
-    public static String checkDomain(String url) {
-        String result;
-        if(url.endsWith(".com")) result = "com";
-        else if (url.endsWith(".net")) result = "net";//напишите тут ваш код
-        else if (url.endsWith(".org")) result = "org";//напишите тут ваш код
-        else if (url.endsWith(".ru")) result = "ru";//напишите тут ваш код
-        else result = "неизвестный";
-        return result;
+    public static String changePath(String path, String jdk) {
+        String now = path.replaceAll("jdk1.8", jdk);//напишите тут ваш код
+        return now;
     }
 }
