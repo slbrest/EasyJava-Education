@@ -1,40 +1,25 @@
 package Lesson8;
 
 /*
-Используя StringTokenizer раздели query на части по разделителю delimiter.
-
-Пример:
-getTokens("java.util.stream", "\\.")
-возвращает массив строк
-{"java", "util", "stream"}
-
-Hint: решить задачу поможет метод countTokens().
+Метод equal(String, String) сравнивает строки по ссылке, используя оператор ==.
+Нужно сделать так, чтобы метод возвращал true, если содержимое строк одинаковое, и false — если разное, не используя метод equals().
 
 Требования:
-•	Нужно, чтобы метод getTokens(String, String) использовал StringTokenizer.
-•	Нужно, чтобы метод getTokens(String, String) возвращал массив типа String, заполненный согласно условию задачи.
+•	Нужно, чтобы в методе equal(String, String) строки сравнивались по содержимому, но используя оператор ==.
+•	Нужно, чтобы метод equal(String, String) возвращал true, если строки одинаковые.
+•	Нужно, чтобы метод equal(String, String) возвращал false, если строки разные.
+•	Метод equals() использовать нельзя
 */
 
-import java.util.Arrays;
-import java.util.StringTokenizer;
-
 public class Lesson8 {
-        public static void main(String[] args) {
-            String packagePath = "java.util.stream";
-            String[] tokens = getTokens(packagePath, "\\.");
-            System.out.println(Arrays.toString(tokens));
-        }
+    public static void main(String[] args) {
+        System.out.println(format("Амиго", 5000));
+    }
 
-        public static String[] getTokens(String query, String delimiter) {
-           StringTokenizer token = new StringTokenizer(query, delimiter);
-           int i = 0;
-            String[] tokens = new String[token.countTokens()];
-            while (token.hasMoreTokens())
-            {
-                tokens[i++] = token.nextToken();
-
-            }//напишите тут ваш код
-            return tokens;
-        }
+    public static String format(String name, int salary) {
+        String phrase = String.format("Меня зовут %s. Я буду зарабатывать $%d в месяц.", name, salary);
+        //напишите тут ваш код
+        return phrase;
+    }
 }
 
