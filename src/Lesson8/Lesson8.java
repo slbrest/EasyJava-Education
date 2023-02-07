@@ -13,13 +13,16 @@ package Lesson8;
 
 public class Lesson8 {
     public static void main(String[] args) {
-        System.out.println(format("Амиго", 5000));
+        String first = new String("JavaRush");
+        String second = new String("JavaRush");
+        String third = new String("javarush");
+        System.out.println(equal(first, second));
+        System.out.println(equal(second, third));
     }
 
-    public static String format(String name, int salary) {
-        String phrase = String.format("Меня зовут %s. Я буду зарабатывать $%d в месяц.", name, salary);
-        //напишите тут ваш код
-        return phrase;
+    public static boolean equal(String first, String second) {
+
+            return first.intern() == second.intern();//напишите тут ваш код
     }
 }
 
