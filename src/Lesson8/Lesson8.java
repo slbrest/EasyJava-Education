@@ -1,32 +1,40 @@
 package Lesson8;
 
 /*
-Реализуй метод changePath(String, String) так, чтобы он заменял версию jdk в пути, полученном первым параметром метода,
-на версию, полученную вторым параметром, и возвращал новый путь.
-Версия jdk начинается со строки "jdk" и заканчивается на "/".
+Используя StringTokenizer раздели query на части по разделителю delimiter.
 
 Пример:
-путь — "/usr/java/jdk1.8/bin/"
-версия jdk — "jdk-13"
+getTokens("java.util.stream", "\\.")
+возвращает массив строк
+{"java", "util", "stream"}
 
-Метод changePath(путь, версия jdk) должен вернуть путь — "/usr/java/jdk-13/bin/".
-Метод main() не принимает участия в тестировании.
+Hint: решить задачу поможет метод countTokens().
 
 Требования:
-•	Нужно, чтобы метод changePath(String, String) был реализован согласно условию.
+•	Нужно, чтобы метод getTokens(String, String) использовал StringTokenizer.
+•	Нужно, чтобы метод getTokens(String, String) возвращал массив типа String, заполненный согласно условию задачи.
 */
 
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
 public class Lesson8 {
+        public static void main(String[] args) {
+            String packagePath = "java.util.stream";
+            String[] tokens = getTokens(packagePath, "\\.");
+            System.out.println(Arrays.toString(tokens));
+        }
 
-    public static void main(String[] args) {
-        String path = "/usr/java/jdk1.8/bin/";
+        public static String[] getTokens(String query, String delimiter) {
+           StringTokenizer token = new StringTokenizer(query, delimiter);
+           int i = 0;
+            String[] tokens = new String[token.countTokens()];
+            while (token.hasMoreTokens())
+            {
+                tokens[i++] = token.nextToken();
 
-        String jdk13 = "jdk-13";
-        System.out.println(changePath(path, jdk13));
-    }
-
-    public static String changePath(String path, String jdk) {
-        String now = path.replaceAll("jdk1.8", jdk);//напишите тут ваш код
-        return now;
-    }
+            }//напишите тут ваш код
+            return tokens;
+        }
 }
+
